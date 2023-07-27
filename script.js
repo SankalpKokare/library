@@ -22,20 +22,20 @@ function addbook() {
   displaybook();
 }
 
-function displaybook() {
-  for (let i = 0; i < mylibrary.length; i++) {
-    let lib = mylibrary[i];
-    let newDiv = document.createElement("div");
+let i = 0;
 
-    newDiv.innerHTML = `
+function displaybook() {
+  let lib = mylibrary[i];
+  let newDiv = document.createElement("div");
+
+  newDiv.innerHTML = `
     <h1>Book: ${lib.title}</h1>
     <p>Author: ${lib.author}</p>
     <p>Number of pages read ${lib.pages}</p>
     <p> Did the book was read? ${lib.read ? "Yes" : "No"}
     `;
-
-    document.getElementById("result").appendChild(newDiv);
-  }
+  i++;
+  document.getElementById("result").appendChild(newDiv);
 }
 
 let button = document.getElementById("submit");
